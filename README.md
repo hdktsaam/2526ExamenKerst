@@ -15,3 +15,24 @@ Bekijk EERST de outputs van elke route alvorens te starten! <br>
 
 Zorg ervoor dat iemand al dan niet kan inloggen (gebruiksvriendelijk)<br>
 Na het inloggen kan hij zijn wachtwoord wijzigen.
+
+## snippets
+
+```JSCode
+  const formData = new FormData(addForm);
+  const userToAdd = Object.fromEntries(formData);
+```
+
+```JSCode
+    fetch("https://fakestoreapi.com/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(userToAdd),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => console.error("Error adding user:", error));
+
+```
